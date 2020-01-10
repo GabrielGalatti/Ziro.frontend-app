@@ -40,9 +40,11 @@ const MyCart = () => {
   }
 
   useEffect(() => {
+    setCartItens([]);
     const uniqueClothes =
       allClothes.length > 1 ? removeDuplicates(allClothes, "id") : [allClothes];
-    setCartItens(uniqueClothes);
+    setCartItens(uniqueClothes.flat());
+    setAllClothes([allClothes].flat());
   }, [setCartItens, setAllClothes]);
 
   return (
@@ -51,14 +53,14 @@ const MyCart = () => {
         <h1 className="page-title">Meu Carrinho:</h1>
         <button
           className="done-button"
-          disabled={cartItens.length != 0 ? false : true}
+          disabled={cartItens.length !== 0 ? false : true}
           onClick={e => DoAnOrder(allClothes.map(c => c.id))}
         >
           Fazer Pedido
         </button>
       </div>
       <div className="cart-items">
-        {cartItens.length !== 0 ? (
+        {cartItens.length > 0 ? (
           cartItens.map(c => (
             <CartItem
               name={c.name}
