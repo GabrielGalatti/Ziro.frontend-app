@@ -1,0 +1,104 @@
+@import "./shared.scss";
+
+.cart {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+
+  .header-cart {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .done-button {
+      appearance: none;
+      height: 30px;
+      border: none;
+      padding: 0 20px 0 20px;
+      border-radius: 50px;
+      background-color: #8fe781;
+      @include textConfig(16px, bold, black, normal, normal, center);
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        background-color: #69e456;
+      }
+
+      &:disabled {
+        opacity: 0.4;
+
+        &:hover {
+          background-color: #8fe781;
+        }
+      }
+    }
+  }
+}
+
+@include desktop {
+  .cart {
+    .cart-items {
+      width: 100%;
+      display: flex;
+      justify-content: start;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@include tablet {
+  .cart {
+    .cart-items {
+      width: 100%;
+      display: flex;
+      justify-content: start;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@include sm-tablet {
+  .cart {
+    .cart-items {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+  }
+}
+@include cellphone {
+  .cart {
+    .cart-items {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .header-cart {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: start;
+
+      .page-title {
+        margin-bottom: 10px;
+      }
+
+      .done-button {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

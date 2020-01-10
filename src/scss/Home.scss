@@ -1,0 +1,115 @@
+@import "../scss/shared.scss";
+
+.home {
+  width: 90%;
+  margin: 0 auto;
+
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+    .logo {
+      width: 90px;
+    }
+
+    .search-input-container {
+      width: 40%;
+      position: relative;
+
+      #search-input {
+        -webkit-appearance: none;
+        border: 1px solid black;
+        height: 20px;
+        width: 100%;
+        border-radius: 0 10px 10px 0;
+        padding: 10px;
+        @include textConfig(18px, normal, initial, normal, 5%, center);
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &::before {
+        content: "";
+        background: url("../assets/images/search-icon.svg");
+        background-size: 30px;
+        background-position-x: center;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 10%;
+        height: 20px;
+        border: 1px solid black;
+        border-radius: 10px 0 0 10px;
+        padding: 10px;
+        left: calc(-10% - 20px);
+        top: 0;
+      }
+    }
+
+    .icon-menu {
+      width: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        width: 25px;
+      }
+    }
+  }
+
+  .admin-button {
+    appearance: none;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 50px;
+    background-color: #202020;
+    @include textConfig(16px, normal, #fee716, normal, normal, center);
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+  }
+}
+
+@include tablet {
+  .home {
+    margin-bottom: 100px;
+  }
+}
+
+@include sm-tablet {
+  .home {
+    margin-bottom: 100px;
+  }
+}
+
+@include cellphone {
+  .home {
+    margin-bottom: 100px;
+    header {
+      justify-content: space-between !important;
+      margin-bottom: 5px !important;
+      .search-input-container {
+        width: 60% !important;
+
+        #search-input {
+          width: 80% !important;
+        }
+      }
+      .icon-menu {
+        width: 100vw !important;
+        justify-content: center !important;
+
+        img {
+          margin: 0 10px 0 10px;
+        }
+      }
+    }
+  }
+}

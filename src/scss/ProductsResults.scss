@@ -1,0 +1,49 @@
+@import "./shared.scss";
+
+.search {
+  padding: 10px;
+  .results {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .no-results-text {
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+@include desktop {
+  .search {
+    .results {
+      justify-content: start;
+    }
+  }
+}
+
+@include tablet {
+  .search {
+    .results {
+      justify-content: left;
+    }
+  }
+}
+
+@include sm-tablet {
+  .search {
+    .results {
+      justify-content: center;
+    }
+  }
+}
+
+@include cellphone {
+  .search {
+    .results {
+      justify-content: center;
+    }
+  }
+}

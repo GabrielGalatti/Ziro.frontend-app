@@ -1,0 +1,187 @@
+@import "../scss/shared.scss";
+
+.product-container {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+
+  margin-bottom: 30px;
+  .product-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #f5f5f5;
+    background-position-x: center;
+    background-position-y: center;
+    position: relative;
+    border-radius: 10px 10px 0 0;
+
+    .product-name {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      opacity: 0;
+    }
+
+    &:hover {
+      .product-name {
+        @include textConfig(16px, bold, #fde408, normal, 2px, center);
+        opacity: 1;
+      }
+      &::after {
+        content: "";
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(
+          180deg,
+          transparent 0%,
+          rgba(0, 0, 0, 0.5) 100%
+        );
+      }
+    }
+  }
+
+  .add-product-button {
+    width: 100%;
+
+    appearance: none;
+    border: none;
+    background-color: #8fe781;
+    border-radius: 0 0 10px 10px;
+    @include textConfig(20px, bold, black, normal, normal, center);
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@include cellphone {
+  .product-container {
+    width: 100%;
+    height: 360px;
+    margin-bottom: 90px;
+    position: relative;
+    .product-image {
+      width: 100%;
+      height: 320px;
+      .product-name {
+        @include textConfig(16px, bold, #fde408, normal, 2px, center);
+        opacity: 1 !important;
+      }
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(
+          180deg,
+          transparent 0%,
+          rgba(0, 0, 0, 0.8) 90%
+        );
+      }
+    }
+
+    .add-product-button {
+      height: 40px;
+    }
+  }
+}
+
+@include sm-tablet {
+  .product-container {
+    width: 80%;
+    height: 350px;
+    margin-bottom: 90px;
+
+    .product-image {
+      width: 100%;
+      height: 300px;
+      background-size: cover;
+
+      .product-name {
+        @include textConfig(16px, bold, #fde408, normal, 2px, center);
+        opacity: 1 !important;
+      }
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(
+          180deg,
+          transparent 0%,
+          rgba(0, 0, 0, 0.5) 100%
+        );
+      }
+    }
+
+    .add-product-button {
+      height: 50px;
+    }
+  }
+}
+
+@include desktop {
+  .product-container {
+    width: 20%;
+    height: 325px;
+    margin-right: 5%;
+    margin-bottom: 90px;
+
+    .product-image {
+      width: 100%;
+      height: 290px;
+    }
+
+    .add-product-button {
+      height: 35px;
+    }
+  }
+}
+
+@include tablet {
+  .product-container {
+    width: 40%;
+    height: 325px;
+    margin-right: 5%;
+    margin-bottom: 90px;
+
+    .product-image {
+      width: 100%;
+      height: 290px;
+      .product-name {
+        @include textConfig(16px, bold, #fde408, normal, 2px, center);
+        opacity: 1 !important;
+      }
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(
+          180deg,
+          transparent 0%,
+          rgba(0, 0, 0, 0.5) 100%
+        );
+      }
+    }
+    .add-product-button {
+      height: 35px;
+    }
+  }
+}

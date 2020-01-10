@@ -1,0 +1,50 @@
+$cellphone-width: 450px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin textConfig(
+  $fontSize: 16px,
+  $weight: normal,
+  $color: black,
+  $lineHeight: normal,
+  $letterSpacing: normal,
+  $align: justify,
+  $font: "Quicksand"
+) {
+  font-weight: $weight;
+  font-family: $font;
+  color: $color;
+  font-size: $fontSize;
+  text-align: $align;
+  letter-spacing: $letterSpacing;
+  line-height: $lineHeight;
+}
+
+.page-title {
+  @include textConfig(22px, bold, black, normal, 2px, left);
+  margin-bottom: 30px;
+}
+
+@mixin cellphone {
+  @media (max-width: #{$cellphone-width}) {
+    @content;
+  }
+}
+
+@mixin sm-tablet {
+  @media (min-width: #{$cellphone-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
