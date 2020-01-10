@@ -5,16 +5,19 @@
   margin: 0 auto;
   padding: 10px;
   position: relative;
+
+  .orders {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
 }
 
 @include desktop {
   .orders-container {
     .orders {
-      width: 100%;
-      display: flex;
       justify-content: start;
-      align-items: flex-start;
-      flex-wrap: wrap;
     }
   }
 }
@@ -22,11 +25,7 @@
 @include tablet {
   .orders-container {
     .orders {
-      width: 100%;
-      display: flex;
       justify-content: start;
-      align-items: flex-start;
-      flex-wrap: wrap;
     }
   }
 }
@@ -34,22 +33,14 @@
 @include sm-tablet {
   .orders-container {
     .orders {
-      width: 100%;
-      display: flex;
       justify-content: center;
-      align-items: flex-start;
-      flex-wrap: wrap;
     }
   }
 }
 @include cellphone {
   .orders-container {
     .orders {
-      width: 100%;
-      display: flex;
       justify-content: center;
-      align-items: flex-start;
-      flex-wrap: wrap;
     }
   }
 }

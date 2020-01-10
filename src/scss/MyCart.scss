@@ -1,7 +1,7 @@
 @import "./shared.scss";
 
 .cart {
-  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 10px;
   position: relative;
@@ -43,7 +43,7 @@
 @include desktop {
   .cart {
     .cart-items {
-      width: 100%;
+      max-width: 100%;
       display: flex;
       justify-content: start;
       align-items: flex-start;
@@ -55,7 +55,7 @@
 @include tablet {
   .cart {
     .cart-items {
-      width: 100%;
+      max-width: 100%;
       display: flex;
       justify-content: start;
       align-items: flex-start;
@@ -67,7 +67,7 @@
 @include sm-tablet {
   .cart {
     .cart-items {
-      width: 100%;
+      max-width: 100%;
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -78,7 +78,7 @@
 @include cellphone {
   .cart {
     .cart-items {
-      width: 100%;
+      max-width: 100%;
       display: flex;
       justify-content: center;
       align-items: flex-start;
